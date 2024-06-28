@@ -5,6 +5,54 @@ const GuessCard = ({ guess, correct }) => {
     const sortSpeed = () => {
         let correctSpeed = -1;
         let guessSpeed = -1;
+
+        switch (correct.data.speed) {
+            case "Very slow":
+                correctSpeed = 0;
+                break;
+            case "Slow":
+                correctSpeed = 1;
+                break;
+            case "Average":
+                correctSpeed = 2;
+                break;
+            case "Fast":
+                correctSpeed = 3;
+                break;
+            case "Very fast":
+                correctSpeed = 4;
+                break;
+            case "Insanely fast":
+                correctSpeed = 5;
+                break;
+        }
+
+        switch (guess.data.speed) {
+            case "Very slow":
+                guessSpeed = 0;
+                break;
+            case "Slow":
+                guessSpeed = 1;
+                break;
+            case "Average":
+                guessSpeed = 2;
+                break;
+            case "Fast":
+                guessSpeed = 3;
+                break;
+            case "Very fast":
+                guessSpeed = 4;
+                break;
+            case "Insanely fast":
+                guessSpeed = 5;
+                break;
+        }
+
+        if (correctSpeed === guessSpeed) {
+            return "";
+        } else if (correctSpeed > guessSpeed) {
+            return "↑";
+        } else return "↓";
     };
     const sortKnockback = () => {
         let correctKnockbackNumber = -1;
@@ -175,7 +223,7 @@ const GuessCard = ({ guess, correct }) => {
                 } flex items-center justify-center`}
             >
                 <h1 className="text-white">
-                    {guess.data.speed} {sortSpeed}
+                    {guess.data.speed} {sortSpeed()}
                 </h1>
             </div>
             <div
