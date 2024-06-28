@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Andy-Bold';
+    background-color: #000;
+}
+
+@font-face {
+    font-family: 'Andy-Bold';
+    src: local('Andy-Bold.ttf'), url(./fonts/Andy-Bold.ttf.woff) format('woff');
+}
