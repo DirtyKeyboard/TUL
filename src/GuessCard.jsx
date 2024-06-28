@@ -1,6 +1,7 @@
 import React from "react";
 
 const GuessCard = ({ guess, correct }) => {
+    console.log(guess);
     const sortSpeed = () => {
         let correctSpeed = -1;
         let guessSpeed = -1;
@@ -8,7 +9,6 @@ const GuessCard = ({ guess, correct }) => {
     const sortKnockback = () => {
         let correctKnockbackNumber = -1;
         let guessKnockbackNumber = -1;
-        // return "↑ ↓";
         switch (correct.data.knockback.toLowerCase()) {
             case "no knockback":
                 correctKnockbackNumber = 0;

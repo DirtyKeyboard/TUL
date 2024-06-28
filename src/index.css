@@ -5,6 +5,7 @@
 body {
     font-family: 'Andy-Bold';
     background-color: #000;
+    background-image: url("assets/background.png");
 }
 
 @font-face {
